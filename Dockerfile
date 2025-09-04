@@ -1,17 +1,13 @@
-FROM python:3.10-slim
+FROM python:3.11-slim-buster
 
+# Set the working directory in the container
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    software-properties-common \
-    git \
-    && rm -rf /var/lib/apt/lists/*
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-RUN git clone https://github.com/pSharpX/chatbot-mediassist.git .
-
-RUN pip3 install -r requirements.txt
+# Install any needed dependencies specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8501
 
