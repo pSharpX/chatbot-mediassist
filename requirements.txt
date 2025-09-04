@@ -1,0 +1,12 @@
+# requirements.txt
+numpy
+scikit-learn==1.7.1
+pandas
+matplotlib
+transformers
+accelerate
+torch
+sentencepiece
+bitsandbytes
+plotly==6.0.1
+streamlit==1.44.1
